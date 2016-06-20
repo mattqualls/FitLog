@@ -10,6 +10,10 @@ namespace FitLogMVC.Models
     {
         [Key]
         public int AppUserId { get; set; }
+
+        [MaxLength(20)]
+        [MinLength(3)]
+        [RegularExpression(@"^[a-zA-Z\d]+[-_a-zA-Z\d]{0,2}[a-zA-Z\d]+")]
         public string Username { get; set; }
         public string Email { get; set; }
         public int InitialWeight { get; set; }
